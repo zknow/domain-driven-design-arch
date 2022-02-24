@@ -1,0 +1,8 @@
+server:
+  port: ":8080"
+
+mail:
+  host: "smtp.gmail.com"
+  port: 465
+  user_account:  "****@gmail.com "
+  user_password: "****"
