@@ -14,6 +14,6 @@ RUN CGO_ENABLED=0 go build -o myserver
 # post build stage
 FROM alpine
 WORKDIR /server
-COPY ./config.yml .
+COPY ./config/config.yml .
 COPY --from=builder /build/myserver .
 CMD ["./myserver"]
