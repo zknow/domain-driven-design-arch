@@ -28,7 +28,7 @@ func init() {
 }
 
 func main() {
-	serverPort := viper.GetString("Server_PORT")
+	serverPort := viper.GetString("SERVER_PORT")
 	dbHost := viper.GetString("DB_HOST")
 	dbDatabase := viper.GetString("DB_DATABASE")
 	dbUser := viper.GetString("DB_USER")
