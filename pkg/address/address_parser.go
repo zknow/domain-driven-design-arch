@@ -1,13 +1,13 @@
-package utility
+package address
 
 import (
 	"errors"
+	"log"
 	"net"
-
-	log "github.com/sirupsen/logrus"
 )
 
-func ResolveHostIpV4() string {
+// ResolveHostIPV4 ...
+func ResolveHostIPV4() string {
 
 	netInterfaceAddresses, err := net.InterfaceAddrs()
 
@@ -16,12 +16,10 @@ func ResolveHostIpV4() string {
 	}
 
 	for _, netInterfaceAddress := range netInterfaceAddresses {
+		networkIP, ok := netInterfaceAddress.(*net.IPNet)
+		if ok && !networkIP.IP.IsLoopback() && networkIP.IP.To4() != nil {
 
-		networkIp, ok := netInterfaceAddress.(*net.IPNet)
-
-		if ok && !networkIp.IP.IsLoopback() && networkIp.IP.To4() != nil {
-
-			ip := networkIp.IP.String()
+			ip := networkIP.IP.String()
 			return ip
 		}
 	}

@@ -1,26 +1,16 @@
 package config
 
 import (
+	"log"
 	"os"
 	"path"
-
-	log "github.com/sirupsen/logrus"
 
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
 )
 
 type Config struct {
-	Server struct {
-		Port string `mapstructure:"port"`
-	}
-
-	Mail struct {
-		Host    string `mapstructure:"host"`
-		Port    int    `mapstructure:"port"`
-		Account string `mapstructure:"user_account"`
-		Passwd  string `mapstructure:"user_password"`
-	}
+	Port string `mapstructure:"port"`
 }
 
 var (
