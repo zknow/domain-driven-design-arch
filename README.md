@@ -1,4 +1,4 @@
-# Simple API Server Architecture
+# Simple WebAPI DDD Architecture
 
 ## _Tech_
 
